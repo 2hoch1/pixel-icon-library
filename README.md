@@ -88,12 +88,14 @@ npm i @hackernoon/pixel-icon-library
 <i class="hn hn-icon-name"></i>
 ```
 
-# License (CC BY 4.0 International)
+# License (Free | Starter | Pro)
 
 - The icons (.svg/.png) files are free to download and are licensed under CC 4.0
 - By downloading, it is assumed that you agree with the terms mentioned in CC 4.0.
-- You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- You must give appropriate credit, provide a link to the license, and indicate if changes were made. 
 - Other files in the repository which are not icons, are licensed under the MIT License.
+
+### Don't want to attribute? [Consider buying a license plan](https://pixeliconlibrary.com/license/).
 
 # Contribution
 
