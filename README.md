@@ -2,15 +2,103 @@
 
 # HackerNoon's Pixel Icon Library
 
-Introducing [HackerNoon’s Pixel Icon Library (now available as a standalone site @ PixelIconLibrary.com)](https://pixeliconlibrary.com), an open-source collection of 1440+ Pixelated Icons. Meticulously designed on a 24px grid, ensuring perfect alignment and consistency to enrich your web/app/product/page/life experience. Inspired by HackerNoon’s retro design vibe, these icons capture the essence of the internet's good old days.
+Introducing [HackerNoon's Pixel Icon Library (now available as a standalone site @ PixelIconLibrary.com)](https://pixeliconlibrary.com), an open-source collection of 1440+ Pixelated Icons. Meticulously designed on a 24px grid, ensuring perfect alignment and consistency to enrich your web/app/product/page/life experience. Inspired by HackerNoon's retro design vibe, these icons capture the essence of the internet's good old days.
 
-## What’s in the Pixel Icon Library?
+## What's in the Pixel Icon Library?
 
 - 400+ Unique Pixelated Vector Icons.
 - 4 variations per icon to better match your project aesthetic.
 - Light SVG Files.
 - PNG files in 12px, 16 px, 24px, and 48px for both Light/Dark Mode.
 - Multiple Ways to Use - [Install via NPM Package](https://www.npmjs.com/package/@hackernoon/pixel-icon-library), Directly via HTML & CSS, and [via a Figma component library](https://www.figma.com/community/file/1278952394341234192/pixel-icon-library-1440-pixelated-icons-by-hackernoon).
+
+## 🎉 NEW: React Components
+
+Use Pixel Icons as React components, just like [lucide-react](https://lucide.dev)!
+
+```bash
+npm install @hackernoon/pixel-icon-library-react react
+```
+
+```tsx
+import { Home, AlertTriangle, AlertTriangleSolid } from '@hackernoon/pixel-icon-library-react';
+
+export function MyApp() {
+  return (
+    <div>
+      <Home size={24} color="currentColor" />
+      <AlertTriangle size={32} color="red" />
+      <AlertTriangleSolid size={24} />
+    </div>
+  );
+}
+```
+
+**Features:**
+- ✅ 450+ React icon components (regular, solid, brands, purcats variants)
+- ✅ Full TypeScript support with type safety
+- ✅ Fully customizable size, color, stroke width
+- ✅ Tree-shakeable - import only what you need
+- ✅ Zero dependencies (except React)
+
+**Icon Variants:**
+```tsx
+import { Home, HomeSolid, HomeBrands, HomePurcats } from '@hackernoon/pixel-icon-library-react';
+
+// Regular variant (default)
+<Home size={24} />
+
+// Solid variant  
+<HomeSolid size={24} />
+
+// Brands variant
+<HomeBrands size={24} />
+
+// Purcats variant (HackerNoon categories)
+<HomePurcats size={24} />
+```
+
+**Customization Props:**
+- `size` - Icon size in pixels (default: 24)
+- `color` - Icon color (default: 'currentColor')
+- `strokeWidth` - Stroke width (default: 2)
+- `className` - Add custom CSS classes
+- All standard SVG attributes supported
+
+👉 [See full React package documentation →](./packages/pixel-icon-library-react/README.md)
+
+## Development
+
+### Building React Components
+
+Generate React components from SVG files:
+
+```bash
+npm install
+npm run build:icons  # Generate components from SVGs
+npm run build       # Build the React package
+```
+
+The build script automatically converts all SVG icons to React components in `packages/pixel-icon-library-react/src/icons/`.
+
+### Project Structure
+
+```
+pixel-icon-library/
+├── icons/                  # Original SVG and PNG icons
+│   ├── SVG/               # Source SVG files (regular, solid, brands, purcats)
+│   └── PNG/               # Exported PNG files
+├── fonts/                 # Icon font files
+├── packages/
+│   └── pixel-icon-library-react/  # React components package
+│       ├── src/
+│       │   ├── Icon.tsx           # Base icon component
+│       │   ├── types.ts           # TypeScript definitions
+│       │   └── icons/             # Auto-generated components
+│       └── dist/                  # Built package
+└── scripts/
+    └── build-react-icons.js      # SVG to React generator
+```
 
 ## Usage
 
@@ -66,27 +154,22 @@ Most of the modern browsers have deprecated plugins, so this is not recommended.
 <embed src="path/to/icon.svg" />
 ```
 
-### Figma
+### Font Classes (Original Package)
 
-HackerNoon’s Pixel Icon Library is available as a [Figma Community File](https://www.figma.com/community/file/1278952394341234192/Pixel-Icon-Library-%7C-120%2B-Pixelated-Icons-By-HackerNoon). To use the components, log in to your Figma account and duplicate the file to your drafts.
+Install the base icon library with font support:
 
-
-## [Installation via NPM Package](https://www.npmjs.com/package/@hackernoon/pixel-icon-library)
-
-### Installing NPM Package
-```
-npm i @hackernoon/pixel-icon-library
+```bash
+npm install @hackernoon/pixel-icon-library
 ```
 
-### Importing CSS Classes
-```
+```html
 <link rel="stylesheet" href="path/to/@hackernoon/pixel-icon-library/fonts/iconfont.css">
-```
-
-### Displaying An Icon
-```
 <i class="hn hn-icon-name"></i>
 ```
+
+### Figma
+
+HackerNoon's Pixel Icon Library is available as a [Figma Community File](https://www.figma.com/community/file/1278952394341234192/Pixel-Icon-Library-%7C-120%2B-Pixelated-Icons-By-HackerNoon). To use the components, log in to your Figma account and duplicate the file to your drafts.
 
 # License (Free | Starter | Pro)
 
