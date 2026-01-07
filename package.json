@@ -31,8 +31,8 @@
     "build:react": "npm run build --workspace=packages/pixel-icon-library-react",
     "build:icons": "npm run build:icons --workspace=packages/pixel-icon-library-react",
     "dev": "npm run dev --workspace=packages/pixel-icon-library-react",
-    "prepare": "node scripts/build-react-icons.js && cd packages/pixel-icon-library-react && npx rollup -c",
-    "prepack": "node scripts/build-react-icons.js && cd packages/pixel-icon-library-react && npx rollup -c"
+    "prepare": "node scripts/build-react-icons.js && cd packages/pixel-icon-library-react && npx rollup -c rollup.config.mjs",
+    "prepack": "node scripts/build-react-icons.js && cd packages/pixel-icon-library-react && npx rollup -c rollup.config.mjs"
   },
   "peerDependencies": {
     "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
