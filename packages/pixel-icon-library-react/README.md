@@ -151,4 +151,5 @@ const iconMap: Record<string, PixelIcon> = {
 
 ## License
 
-MIT © [HackerNoon](https://hackernoon.com)
+MIT © [HackerNoon](https://hackernoon.com)  
+MIT © [2hoch1](https://github.com/2hoch1/pixel-icon-library/tree/main/packages/pixel-icon-library-react)
