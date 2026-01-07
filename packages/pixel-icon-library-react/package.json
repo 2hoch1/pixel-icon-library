@@ -1,0 +1,55 @@
+{
+  "name": "@hackernoon/pixel-icon-library-react",
+  "version": "1.0.0",
+  "description": "React components for Pixel Icon Library - pixelated icons that you can easily import as React components",
+  "homepage": "https://pixeliconlibrary.com",
+  "keywords": [
+    "hackernoon",
+    "pixelated",
+    "icon",
+    "icon library",
+    "icon pack",
+    "react",
+    "react-icons"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackernoon/pixel-icon-library"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:icons": "node ../../scripts/build-react-icons.js",
+    "build": "npm run build:icons && rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "peerDependencies": {
+    "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.45",
+    "react": "^18.2.0",
+    "rollup": "^4.9.5",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.3.3"
+  }
+}
