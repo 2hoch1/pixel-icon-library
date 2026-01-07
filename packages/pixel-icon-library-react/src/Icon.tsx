@@ -17,6 +17,7 @@ const defaultAttributes = {
 interface IconComponentProps extends PixelIconProps {
   iconNode: IconNode;
   children?: ReactNode;
+  filled?: boolean;
 }
 
 const hasA11yProp = (props: Record<string, any>) => {
@@ -32,6 +33,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
       absoluteStrokeWidth = false,
       className = '',
       children,
+      filled = false,
       iconNode,
       ...rest
     },
@@ -44,13 +46,22 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
         ...defaultAttributes,
         width: size,
         height: size,
-        stroke: color,
+        // Für gefüllte Varianten nutzen wir die Textfarbe als Füllung
+        // und deaktivieren den Stroke.
+        fill: filled ? color : defaultAttributes.fill,
+        stroke: filled ? 'none' : color,
         strokeWidth: absoluteStrokeWidth ? (Number(strokeWidth) * 24) / Number(size) : strokeWidth,
         className: mergeClasses('pixel-icon', className),
         ...(!children && !hasA11yProp(rest) && { 'aria-hidden': 'true' }),
         ...rest,
       },
-      ...(iconNode ? [iconNode.map(([tag, attrs]) => createElement(tag, attrs))] : []),
+      ...(iconNode
+        ? [
+            iconNode.map(([tag, attrs], idx) =>
+              createElement(tag, { key: `pi-${idx}`, ...attrs })
+            ),
+          ]
+        : []),
       ...(Array.isArray(children) ? children : [children])
     )
 );

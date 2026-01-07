@@ -10,11 +10,13 @@ export const createPixelIcon = (
 ): PixelIcon => {
   const variantSuffix = variant ? `${toPascalCase(variant)}` : '';
   const displayName = `${toPascalCase(iconName)}${variantSuffix}`;
+  const filled = variant ? variant !== 'regular' : false;
   
   const Component = forwardRef<SVGSVGElement, PixelIconProps>(({ className, ...props }, ref) =>
     React.createElement(Icon, {
       ref,
       iconNode,
+      filled,
       className: mergeClasses(
         `pixel-icon-${toKebabCase(displayName)}`,
         `pixel-icon-${iconName}${variant ? `-${variant}` : ''}`,
