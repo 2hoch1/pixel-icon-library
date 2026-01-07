@@ -1,22 +1,22 @@
-# @hackernoon/pixel-icon-library-react
+# @2hoch1/pixel-icon-library-react
 
 React components for [Pixel Icon Library](https://pixeliconlibrary.com) - pixelated icons that you can easily import as React components, just like [lucide-react](https://lucide.dev).
 
 ## Installation
 
 ```bash
-npm install @hackernoon/pixel-icon-library-react react
+npm install @2hoch1/pixel-icon-library-react react
 # or
-yarn add @hackernoon/pixel-icon-library-react react
+yarn add @2hoch1/pixel-icon-library-react react
 # or
-pnpm add @hackernoon/pixel-icon-library-react react
+pnpm add @2hoch1/pixel-icon-library-react react
 ```
 
 ## Usage
 
 ```tsx
 import React from 'react';
-import { AlertTriangle, RotateCw, Home, AlertTriangleSolid, HomeBrands } from '@hackernoon/pixel-icon-library-react';
+import { AlertTriangle, RotateCw, Home, AlertTriangleSolid, HomeBrands } from '@2hoch1/pixel-icon-library-react';
 
 export function MyComponent() {
   return (
@@ -94,7 +94,7 @@ Browse all available icons at [pixeliconlibrary.com](https://pixeliconlibrary.co
 ### With Tailwind CSS
 
 ```tsx
-import { Home, Settings, Users } from '@hackernoon/pixel-icon-library-react';
+import { Home, Settings, Users } from '@2hoch1/pixel-icon-library-react';
 
 export function Navigation() {
   return (
@@ -111,7 +111,7 @@ export function Navigation() {
 
 ```tsx
 import styled from 'styled-components';
-import { AlertTriangle } from '@hackernoon/pixel-icon-library-react';
+import { AlertTriangle } from '@2hoch1/pixel-icon-library-react';
 
 const IconWrapper = styled.div`
   display: flex;
@@ -135,7 +135,7 @@ export function ErrorMessage() {
 Full TypeScript support is included out of the box:
 
 ```tsx
-import type { PixelIcon } from '@hackernoon/pixel-icon-library-react';
+import type { PixelIcon } from '@2hoch1/pixel-icon-library-react';
 
 const iconMap: Record<string, PixelIcon> = {
   home: Home,
@@ -143,6 +143,11 @@ const iconMap: Record<string, PixelIcon> = {
   users: Users,
 };
 ```
+
+## Credits
+
+- Icons: Created by [HackerNoon](https://hackernoon.com) — see the original [Pixel Icon Library](https://pixeliconlibrary.com) and [@hackernoon](https://github.com/hackernoon).
+- React wrapper: Published as a fork under `@2hoch1/pixel-icon-library-react`.
 
 ## License
 

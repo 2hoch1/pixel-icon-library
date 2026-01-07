@@ -1,8 +1,17 @@
 {
-  "name": "@hackernoon/pixel-icon-library-react",
+  "name": "@2hoch1/pixel-icon-library-react",
   "version": "1.0.0",
-  "description": "React components for Pixel Icon Library - pixelated icons that you can easily import as React components",
+  "description": "Forked React wrapper for Pixel Icon Library icons (credits: @hackernoon)",
   "homepage": "https://pixeliconlibrary.com",
+  "author": {
+    "name": "2hoch1"
+  },
+  "contributors": [
+    {
+      "name": "HackerNoon",
+      "url": "https://github.com/hackernoon"
+    }
+  ],
   "keywords": [
     "hackernoon",
     "pixelated",
@@ -36,6 +45,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build:icons": "node ../../scripts/build-react-icons.js",
     "build": "npm run build:icons && rollup -c rollup.config.mjs",
