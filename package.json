@@ -11,6 +11,11 @@
       "import": "./packages/pixel-icon-library-react/dist/index.esm.js",
       "require": "./packages/pixel-icon-library-react/dist/index.cjs",
       "types": "./packages/pixel-icon-library-react/dist/index.d.ts"
+    },
+    "./icons/*": {
+      "import": "./packages/pixel-icon-library-react/dist/icons/*.esm.js",
+      "require": "./packages/pixel-icon-library-react/dist/icons/*.cjs",
+      "types": "./packages/pixel-icon-library-react/dist/icons/*.d.ts"
     }
   },
   "workspaces": [
@@ -32,6 +37,7 @@
   "peerDependencies": {
     "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
+  "sideEffects": false,
   "devDependencies": {
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.45",
