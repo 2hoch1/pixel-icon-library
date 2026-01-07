@@ -3,6 +3,16 @@
   "version": "1.0.6",
   "description": "Pixel Icon Library - monorepo containing base icons and React components",
   "private": true,
+  "main": "./packages/pixel-icon-library-react/dist/index.cjs",
+  "module": "./packages/pixel-icon-library-react/dist/index.esm.js",
+  "types": "./packages/pixel-icon-library-react/dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./packages/pixel-icon-library-react/dist/index.esm.js",
+      "require": "./packages/pixel-icon-library-react/dist/index.cjs",
+      "types": "./packages/pixel-icon-library-react/dist/index.d.ts"
+    }
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -15,7 +25,12 @@
     "build": "npm run build --workspaces --if-present",
     "build:react": "npm run build --workspace=packages/pixel-icon-library-react",
     "build:icons": "npm run build:icons --workspace=packages/pixel-icon-library-react",
-    "dev": "npm run dev --workspace=packages/pixel-icon-library-react"
+    "dev": "npm run dev --workspace=packages/pixel-icon-library-react",
+    "prepare": "node scripts/build-react-icons.js && cd packages/pixel-icon-library-react && npx rollup -c",
+    "prepack": "node scripts/build-react-icons.js && cd packages/pixel-icon-library-react && npx rollup -c"
+  },
+  "peerDependencies": {
+    "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
@@ -25,4 +40,10 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.3.3"
   }
+  ,
+  "files": [
+    "packages/pixel-icon-library-react/dist",
+    "README.md",
+    "LICENSE"
+  ]
 }
